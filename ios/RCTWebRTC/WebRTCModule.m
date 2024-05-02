@@ -58,13 +58,13 @@
         // Initialize logging.
         RTCSetMinDebugLogLevel(loggingSeverity);
 
+        RTC_OBJC_TYPE(RTCAudioSessionConfiguration) *webRTCConfig = [RTC_OBJC_TYPE(RTCAudioSessionConfiguration) webRTCConfiguration];
         // Configure Webrtc Audio Session to be recvOnly mode
         if (audioRecvOnly) {
-          RTC_OBJC_TYPE(RTCAudioSessionConfiguration) *webRTCConfig =
-              [RTC_OBJC_TYPE(RTCAudioSessionConfiguration) webRTCConfiguration];
           webRTCConfig.recvOnlyMode = true;
-          [RTC_OBJC_TYPE(RTCAudioSessionConfiguration) setWebRTCConfiguration:webRTCConfig];
         }
+        webRTCConfig.categoryOptions = AVAudioSessionCategoryOptionDefaultToSpeaker;
+        [RTC_OBJC_TYPE(RTCAudioSessionConfiguration) setWebRTCConfiguration:webRTCConfig];
 
         if (encoderFactory == nil) {
             encoderFactory = [[RTCDefaultVideoEncoderFactory alloc] init];
