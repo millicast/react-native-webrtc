@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   s.dependency          'React-Core'
 
   # Note: Need to be supplied by a private pod specs repo
-  s.dependency          'RNMillicastWebRTC', '~> 118.0.0'
+  s.dependency          'RNMillicastWebRTC', '118.0.0-4d27b948'
 end
