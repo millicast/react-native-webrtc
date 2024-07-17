@@ -30,7 +30,7 @@ android {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    api 'com.millicast:webrtc:118.0.0'
+    api 'com.millicast:webrtc:118.0.0-e6b4dc85'
 }
 
 allprojects {
